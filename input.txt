@@ -1,0 +1,10 @@
+2
+~Loves(Mary, John)
+~Loves(Mary, Bill)
+6
+Star(x)|~Loves(Mary,x)
+~Play(x)|Pass(x)|~Student(x)
+Student(John)
+Study(x)|~Student(x)|~Pass(x)
+Play(x)|~Star(x)
+~Study(John)

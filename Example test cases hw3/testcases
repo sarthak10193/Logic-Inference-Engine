@@ -1,0 +1,534 @@
+#################################################
+6
+F(Joe)
+H(John)
+~H(Alice)
+~H(John)
+G(Joe)
+G(Tom)
+14
+~F(x) | G (x)
+~G(x) | H(x)
+~H(x) | F(x)
+~R(x) | H(x)
+~A(x) | H(x)
+~D(x,y) | ~H(y)
+~B(x,y) | ~C(x, y   ) | A(x)
+B(John,Alice)
+B(John,Joe)
+~D(x,y) | ~Q(y) | C(x,y)
+D(John,Alice)
+Q(Joe)
+D(John,Joe)
+R(Tom)
+
+False
+True
+True
+False
+False
+True
+
+####################################################
+1
+B(Joe)
+2
+A(x, y) | B(x)
+~A(Joe, John)
+
+True
+
+####################################################
+1
+Criminal(West)
+7
+~American(x) | ~Weapon(y) | ~Sells(x,y,z) | ~Enemy(z,America) | Criminal(x)
+Owns(Nono,M1)
+Missile(M1)
+~Missile(x) | ~Owns(Nono,x) | Sells(West,x,Nono)
+~Missile(x) | Weapon(x)
+Enemy(Nono,America)
+American(West)
+
+True
+
+####################################################
+1
+American(West)
+7
+~American(x) | ~Weapon(y) | ~Sells(x,y,z) | ~Enemy(z,America) | Criminal(x)
+Owns(Nono,M1)
+Missile(M1)
+~Missile(x) | ~Owns(Nono,x) | Sells(West,x,Nono)
+~Missile(x) | Weapon(x)
+Enemy(Nono,America)
+Criminal(West)
+
+False
+
+####################################################
+1
+B(John)
+2
+A(x)
+~A(x) | B(John)
+
+True
+
+####################################################
+1
+B(John)
+3
+A(x) | B(Tom)
+~A(x) | B(John)
+~B(Tom)
+
+True
+#####################################################
+2
+Ancestor(Liz,Billy)
+Ancestor(Liz,Joe)
+6
+Mother(Liz,Charley)
+Father(Charley,Billy)
+~Mother(x,y) | Parent(x,y)
+~Father(x,y) | Parent(x,y)
+~Parent(x,y) | Ancestor(x,y)
+~Parent(x,y) | ~Ancestor(y,z) | Ancestor(x,z)
+
+True
+False
+
+#####################################################
+1
+A(John)
+1
+A(x)
+
+True
+
+########################################################
+2
+Student(Alice)
+Student(Bob)
+1
+Student(a) | Student(b) | Student(c) | Student(d) | Student(e) | Student(f)
+
+
+True
+True
+########################################################
+
+2
+Livesmore(Ani)
+Livesmore(Sid)
+8
+~Rich (x)  |  ~Healthy(x) |  Livesmore(x)
+~Eatwell(x) |  Healthy(x)
+~Exercise(x)  |  Healthy(x)
+~Rich(y) | ~Father(y,x) | Rich  (x)
+Rich(Ani)
+Father(Ani,Sid)
+~Eatwell(Sid)
+Exercise (Sid)
+
+False
+True
+#########################################################
+Test case 17
+
+2
+~Loves(Mary, John)
+~Loves(Mary, Bill)
+6
+~Loves(Mary,x) | Star(x)
+~Student(x) | Pass(x) | ~Play(x)
+Student(John)
+~Student(x) | Study(x) | ~Pass(x)
+Play(x) | ~Star(x)
+~Study(John)
+
+TRUE
+FALSE
+
+
+###########################################################
+TestCase 15
+
+2
+King (John)
+King (Julius)
+8
+Queen (Mary)
+Husband (Mary, John)
+~Husband (y, x) | ~Queen(y) | King(x)
+~Queen(x) | Beautiful(x)
+Husband (Sita, Julius)
+Sister (Mary, Sita)
+~Sister (x, y) | Sister (y, x)
+~Sister (x, y) | ~Queen (x) | Queen(y)
+
+True
+True
+
+###########################################################
+TestCase14
+
+2
+Trump(Ram)
+Trump(Sita)
+8
+~Man(x) | Trump(x)
+~White(x) | Trump(x)
+~Indian(x) | ~White(x)
+~Woman(x) | ~Man(x)
+Man(Ram)
+Indian(Ram)
+Woman(Sita)
+Indian(Sita)
+
+True
+False
+
+############################################################
+TestCase 12
+
+1
+~Child(Scrooge)
+6
+~Child(x) | Loves(x, Santa)
+~Loves(x,Santa) | ~Reindeer(y) | Loves(x,y)
+Reindeer(Rudolph)
+Rednose(Rudolph)
+Rednose(x) | Clown(x)
+Weird(x) | Clown(x)
+~Reindeer(x) | ~Clown(x)
+~Weird(x) | ~Loves(Scrooge,x)
+
+True
+
+############################################################
+TestCase10
+
+2
+Kills(Curiosity,Tuna)
+~Kills(Curiosity, Tuna)
+9
+Dog(D)
+Owns(Jack,D)
+~Dog(y) | ~Owns(x,y) | AnimalLover(x)
+AnimalLover(x)
+Animal(y)
+Kills(x,y)
+Kills(Jack, Tuna) | Kills(Curiosity, Tuna)
+Cat(Tuna)
+~Cat(x) | Animal(x)
+
+True
+False
+############################################################
+Test case 9
+
+2
+A(Bob)
+~A(Bob)
+2
+A(x) | ~B(x) | ~C(x)
+B(Bob)|C(Bob)
+
+False
+##############################################################
+Test Case 8
+
+2
+Mortal(Socretes)
+~Mortal(Aristotle)
+3
+~Man(x) | Mortal(x)
+Man(Socretes)
+Man(Aristotle)
+
+True
+False
+
+##############################################################
+1
+D(Bob)
+4
+~A(x) | B(x) 
+A(x) | C(x) 
+~B(x) | D(x)
+~C(x) | D(x) 
+
+True
+
+##############################################################
+Test case5
+
+1
+Triples(Child1,Child2,Suresh)
+35
+(((Family(a,b,c,d) & Family(e,f,g,b)) & Family(h,i,j,a)) => OverallFamily(a,b,c,d,e,f,g,h,i,j))
+((((Male(x) & Female(y)) & Married(x,y)) & Siblings(z,a)) => Family(x,y,z,a))
+(((((Parent(x,c) & Parent(x,d)) & Parent(y,c)) & Parent(y,d)) & Married(x,y)) => Siblings(c,d))
+(Siblings(x,y) => SameFamily(x,y))
+((SameFamily(a,x) & SameFamily(a,y)) => Triples(x,y,z))
+(Triples(x,y,z) => Siblings(x,z))
+(Triples(x,y,z) => Siblings(x,y))
+(Father(x,y) => Parent(x,y))
+(Mother(x,y) => Parent(x,y))
+((Father(z,y) & Married(z,x)) => Parent(x,y))
+((Mother(z,y) & Married(x,z)) => Parent(x,y))
+Male(John)
+Male(Bob)
+Male(Nishant)
+Female(Christina)
+Female(Emily)
+Female(Amanda)
+InRelationship(John,Christina)
+InRelationship(Bob,Emily)
+InRelationship(Nishant,Amanda)
+Father(Nishant,Anirban)
+Father(Bob,Suresh)
+Mother(Christina,Amanda)
+Mother(Christina,Elena)
+Mother(Christina,Preethi)
+Mother(Christina,Reshmi)
+(((Male(x) & Female(y)) & InRelationship(x,y)) => Married(x,y))
+Mother(Emily,Nishant)
+Mother(Amanda,Vipin)
+Male(Batman)
+Female(Catwomen)
+Mother(Catwomen,Child1)
+Mother(Catwomen,Child2)
+Mother(Catwomen,Child3)
+InRelationship(Batman,Catwomen)
+
+False
+
+#######################################################################
+1
+Horse(h)
+9
+~Horse(x) | Mammal(x)
+~Cow(x) | Mammal(x)
+~Pig( x) | Mammal(x)
+~Offspring(x,y)| ~Horse(y)) | Horse(x)
+Horse(Bluebeard)
+Parent(Bluebeard, Charlie)
+~Offspring(x,y) | Parent(y,x)
+~Parent(x,y) | Offspring(y,x)
+~Mammal(x) | Parent(G(x), x)
+
+True
+
+##########################################################################
+
+1
+Hate(Marcus,C)
+8
+Man(Marcus)
+Pomp(Marcus)
+~Pomp(x) | Roman(x)
+Ruler(C)
+~Roman(x) | Loyal(x,C) | Hate(x,C)
+Loyal(x,y)
+TryAssn(Marcus,C)
+~Man(x) | ~Ruler(y) | ~TryAssn(x,y) | ~Loyal(x,y)
+
+True
+
+##########################################################################
+2
+S(S)
+~S(S)
+7
+S(x)|M(x)
+~M(x)|~L(x,R)
+~S(x)|L(x,S)
+~L(T,x)|~L(E,x)
+L(T,x)|L(E,x)
+L(T,R)
+L(T,S)
+
+False
+False
+########################################################
+
+2
+F(A)
+~F(A)
+8
+~B(x)|~C(x)|H(x)
+~B(x)|~S(x)|G(x)|E(x)
+~E(x)|F(x)|C(o)
+H(x)
+B(x)
+S(x)
+~G(x)
+~C(x)
+
+True
+False
+
+########################################################
+1
+P(Joe, Mary)
+2
+P(x,y) | P(a,b) | ~A(x)
+A(y) | ~P(c,d)
+
+False
+
+##########################################################
+1
+A(Asd, Vsd)
+1
+A(a,b) | A(c,d)
+
+#################################
+1
+A(John)
+31
+~G(x,y) | F(y,x)
+~F(S,SS)|G(x,y)
+G(SS,S)
+ ~B(x) | ~C(x) |A(x)
+B(John)
+~D(x) | C(x)
+~C(x) | D(x)
+~AA(x,John) | ~BB(Bob) | CC(Tom)
+BB(Bob)
+AA(Bob,John)
+~T(A) |T(B)
+T(A)
+~T(x) |T(C)
+~American(x)|~Weapon(y)|~Sells(x,y,z)|~Hostile(z)|Criminal(x)
+Owns(Nono,MONE)
+Missile(MONE)
+Missile(x) | Owns(Nono,x)|Sells(West,x,Nono)
+~Missile(x) | Weapon(x)
+~Enemy(x,America) | Hostile(x)
+American(West)
+Enemy(Nono,America)
+~FA(y,y,x) |~RA(z) |GA(z)
+~AB(x,y,z) | FA(x,y,y)
+AB(Random,Sub,Randomm)
+RA(Add)
+~Test(x,x) | TS(A)
+Test(B,BB)
+~Test(x,y) | TS(T)
+~SE(x) | SEE(x)
+~SEEE(x) | SE(x)
+SEEE(Bob)
+
+False
+
+############################################
+
+1
+GA(Add)
+4
+~FA(y,y,x) |~RA(z) |GA(z)
+~AB(x,y,z) | FA(x,y,y)
+AB(Random,Sub,Randomm)
+RA(Add)
+
+False
+#########################################
+
+4
+C(PHD, PHD)
+C(MS, MS)
+C(EE, EE)
+C(CS, CS)
+5
+~A(x,y) | ~B(z,w) | C(x,w)
+~C(y,x) | A(x,y)
+~C(x,y) | B(y,x)
+A(EE, CS)
+B(MS, PHD)
+
+True
+False
+True
+False
+
+############################################
+1
+P(Joe, Mary)
+2
+P(x,y) | P(a,b) | ~A(x)
+A(y) | ~P(c,d)
+###############################################
+
+5
+B(John,Bob)
+G(Tim,Tom)
+F(Amy)
+A(Melissa,Mary)
+H(John,Bob)
+13
+~A(x,y) | B(x,y)
+~G(x,y) | B(x,y)
+~C(c,d) | A(c,d)
+~B(x,y) | G(x,y)
+~F(y) | G(x,y)
+~G(x,y) | ~F(y) | H(x,y)
+~I(z) | F(z)
+~F(z) | I(z)
+C(Jie,Joe)
+C(Melissa,Mary)
+G(John,Bob)
+I(Amy)
+F(Bob)
+
+TRUE
+FALSE
+TRUE
+TRUE
+TRUE
+###################################################
+2
+Frustrated(Coy)
+Frustrated(Bill)
+11
+~Coyote(x) | Roadrunner(y)
+~Coyote(x) | Chase(x,y)
+~Roadrunner(x) | ~Beep(x) | Smart(x)
+~Coyote(x) | ~Roadrunner(y) | ~Smart(y) | ~Catch(x,y)
+~Coyote(x) | ~Roadrunner(y) | ~Chase(x,y) | Catch(x,y) | Frustrated(x)
+~Roadrunner(x) | Beep(x)
+Beep(RR)
+Coyote(Coy)
+~Coyote(Bill)
+Roadrunner(RR)
+Roadrunner(RRtwo)
+
+True
+False
+##################################################
+2
+Conservative(Clem)
+~Conservative(Stan)
+12
+~Austinite(x)|Conservative(x)|Armadillo(y)
+~Austinite(x)|Conservative(x)|Loves(x,y)
+~Wears(x)|Aggie(x)
+~Aggie(x)|~Dog(y)|Loves(x,y)
+Loves(x,z)
+Armadillo(z)
+~Loves(x,y)
+Dog(y)
+Austinite(Clem)
+Wears(Clem)
+~Wears(Stan)
+Austinite(Stan)
+
+
+1
+C(Tom)
+2
+~B(Tom)
+~A(x) | B(x)
+A(x)
